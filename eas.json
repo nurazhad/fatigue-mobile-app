@@ -1,12 +1,16 @@
 {
   "build": {
+    "preview": {
+      "channel": "preview"
+    },
     "production": {
       "android": {
         "image": "latest"
       },
       "ios": {
         "image": "latest"
-      }
+      },
+      "channel": "production"
     }
   }
 }

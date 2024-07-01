@@ -9,18 +9,18 @@ import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaView, } from 'react-native-safe-area-context';
 
 export default function Media() {
-  const [playing, setPlaying] = useState(false);
+  // const [playing, setPlaying] = useState(false);
 
-  const onStateChange = useCallback((state) => {
-    if (state === "ended") {
-      setPlaying(false);
-      Alert.alert("video has finished playing!");
-    }
-  }, []);
+  // const onStateChange = useCallback((state) => {
+  //   if (state === "ended") {
+  //     setPlaying(false);
+  //     Alert.alert("video has finished playing!");
+  //   }
+  // }, []);
 
-  const togglePlaying = useCallback(() => {
-    setPlaying((prev) => !prev);
-  }, []);
+  // const togglePlaying = useCallback(() => {
+  //   setPlaying((prev) => !prev);
+  // }, []);
 
   return (
     <SafeAreaView>
