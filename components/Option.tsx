@@ -1,22 +1,33 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface Props {
-    option: string
-    isSelected: boolean
-    checkIfSelected: ()=> void
-    setSelectedOption: any
+  option: string;
+  isSelected: boolean;
+  checkIfSelected: () => void;
+  setSelectedOption: any;
 }
 
-const Option = ({option, isSelected, checkIfSelected, setSelectedOption}:Props) => {
-
-    const handleSelect = () => {
-        setSelectedOption(option)
-        checkIfSelected()
-    }
+const Option = ({
+  option,
+  isSelected,
+  checkIfSelected,
+  setSelectedOption,
+}: Props) => {
+  const handleSelect = () => {
+    setSelectedOption(option);
+    checkIfSelected();
+  };
 
   return (
-    <TouchableOpacity onPress={handleSelect} activeOpacity={0.8} style={[styles.option, { backgroundColor: isSelected ? "#858793" : "#FFF" }    ]}>
-      <Text style={{ fontWeight: "500" }} >{option}</Text>
+    <TouchableOpacity
+      onPress={handleSelect}
+      activeOpacity={0.8}
+      style={[
+        styles.option,
+        { backgroundColor: isSelected ? "#858793" : "#FFF" },
+      ]}
+    >
+      <Text style={{ fontWeight: "500" }}>{option}</Text>
     </TouchableOpacity>
   );
 };
@@ -31,6 +42,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     justifyContent: "center",
     marginBottom: 20,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
+    shadowOpacity: 0.4,
+    shadowRadius: 5,
   },
 });

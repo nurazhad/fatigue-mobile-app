@@ -1,27 +1,38 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
 
-
-const Results = ({score, fatigue, restart}:{score:number, fatigue:string, restart:()=>void}) => {
-  if (score >= 20){
-    fatigue = "TINGGI"
-  }else if (score >= 10){
-    fatigue = "SEDANG"
-  }else {
-    fatigue = "RENDAH"
+const Results = ({
+  score,
+  fatigue,
+  restart,
+}: {
+  score: number;
+  fatigue: string;
+  restart: () => void;
+}) => {
+  if (score >= 20) {
+    fatigue = "TINGGI";
+  } else if (score >= 10) {
+    fatigue = "SEDANG";
+  } else {
+    fatigue = "RENDAH";
   }
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-
-        <Text style={{marginVertical: 20, fontWeight: "500"}} >Tingkat Kelelahan Anda Adalah ... {score}</Text>
-
-        <Text style={{fontWeight: "700", fontSize: 50, color: "#004643"}} >{fatigue}</Text>
-
-        <TouchableOpacity onPress={restart} activeOpacity={.8} style={styles.btn} >
-            <Text style={{color:"white", fontWeight: "600"}} >Ulangi</Text>
+        <Text style={{ marginVertical: 20, fontWeight: "500" }}>
+          Tingkat Kelelahan Anda Adalah ... {score}
+        </Text>
+        <Text style={{ fontWeight: "700", fontSize: 50, color: "#004643" }}>
+          {fatigue}
+        </Text>
+        <TouchableOpacity
+          onPress={restart}
+          activeOpacity={0.8}
+          style={styles.btn}
+        >
+          <Text style={{ color: "white", fontWeight: "600" }}>Ulangi</Text>
         </TouchableOpacity>
-        
       </View>
     </View>
   );
@@ -54,5 +65,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#35374B",
     marginTop: 20,
-  }
+  },
 });

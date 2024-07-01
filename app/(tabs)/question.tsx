@@ -1,12 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
-import Option from './../../components/Option';
-import { useEffect, useState } from 'react';
-import { questionsData } from './questions';
-import Results from './../../components/Results';
+import { StatusBar } from "expo-status-bar";
+import { Link, Stack } from 'expo-router';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  ScrollView,
+} from "react-native";
+import Option from "./../../components/Option";
+import { useEffect, useState } from "react";
+import { questionsData } from "./questions";
+import Results from "./../../components/Results";
 
 export default function App() {
-  const [questions, setQuestions] = useState<any>([])
+  const [questions, setQuestions] = useState<any>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [prevScore, setPrevScore] = useState(0);
@@ -19,18 +27,18 @@ export default function App() {
     option3: false,
     option4: false,
     option5: false,
-  })
-  const [percentageComplete, setPercentageComplete] = useState(0)
+  });
+  const [percentageComplete, setPercentageComplete] = useState(0);
 
   useEffect(() => {
-    setQuestions(questionsData)
-  }, [])
-  
+    setQuestions(questionsData);
+  }, []);
+
   let currentQuestion = questions[currentQuestionIndex];
 
   useEffect(() => {
     // let percentage = (((currentQuestionIndex + 1) / questions?.length) * 100);
-    let percentage = (currentQuestionIndex) * 20
+    let percentage = currentQuestionIndex * 20;
 
     setPercentageComplete(percentage);
   }, [currentQuestionIndex]);
@@ -38,8 +46,8 @@ export default function App() {
   const handlePrev = () => {
     setCurrentQuestionIndex((prevQuestion) => prevQuestion - 1);
     setScore((currentScore) => currentScore - prevAnswer);
-    setPrevAnswer
-  }
+    setPrevAnswer;
+  };
 
   const handleNext = () => {
     if (selectedOption === "Sangat Setuju") {
@@ -73,9 +81,8 @@ export default function App() {
       option3: false,
       option4: false,
       option5: false,
-    
-    })
-  }
+    });
+  };
 
   const checkOptionOne = () => {
     setCheckIfSelected({
@@ -130,11 +137,14 @@ export default function App() {
     setScore(0);
     setCurrentQuestionIndex(0);
     setShowResult(false);
-  }
-  let fatigue = "rendah"
-  if (showResult) return  <Results restart={restart} score={score} fatigue = {fatigue}/>
+  };
+  let fatigue = "rendah";
+  if (showResult)
+    return <Results restart={restart} score={score} fatigue={fatigue} />;
 
   return (
+    <>
+      <Stack.Screen options={{ title: 'Pertanyaan' }} />
     <View style={styles.container}>
       <StatusBar style="auto" />
       <SafeAreaView>
@@ -142,58 +152,91 @@ export default function App() {
           <Text style={{fontWeight: "600"}} >{score} / {prevScore} / {prevAnswer}</Text>
         </View> */}
 
-        <View style={styles.questionwrapper} >
-
-          <View style={styles.progresswrapper} >
-            <View style={[styles.progressBar, {width: `${percentageComplete}%`}]} ></View>
-            <View style={styles.progresscount} >
-                <Text style={styles.percentage}>{percentageComplete}%</Text>
+        <View style={styles.questionwrapper}>
+          <View style={styles.progresswrapper}>
+            <View
+              style={[styles.progressBar, { width: `${percentageComplete}%` }]}
+            ></View>
+            <View style={styles.progresscount}>
+              <Text style={styles.percentage}>{percentageComplete}%</Text>
             </View>
           </View>
 
-         <Text style={{ fontWeight: "500", textAlign: "center" }}>
+          <Text style={{ fontWeight: "500", textAlign: "center" }}>
             {currentQuestion?.question}
-         </Text>
+          </Text>
         </View>
-        <View style={styles.optionswrapper} >
-          <Option setSelectedOption={setSelectedOption} checkIfSelected={checkOptionOne} isSelected={checkIfSelected.option1} option={currentQuestion?.options[0]} />
-          <Option setSelectedOption={setSelectedOption} checkIfSelected={checkOptionTwo} isSelected={checkIfSelected.option2} option={currentQuestion?.options[1]} />
-          <Option setSelectedOption={setSelectedOption} checkIfSelected={checkOptionThree} isSelected={checkIfSelected.option3} option={currentQuestion?.options[2]} />
-          <Option setSelectedOption={setSelectedOption} checkIfSelected={checkOptionFour} isSelected={checkIfSelected.option4} option={currentQuestion?.options[3]} />
-          <Option setSelectedOption={setSelectedOption} checkIfSelected={checkOptionFive} isSelected={checkIfSelected.option5} option={currentQuestion?.options[4]} />
+        <View style={styles.optionswrapper}>
+          <Option
+            setSelectedOption={setSelectedOption}
+            checkIfSelected={checkOptionOne}
+            isSelected={checkIfSelected.option1}
+            option={currentQuestion?.options[0]}
+          />
+          <Option
+            setSelectedOption={setSelectedOption}
+            checkIfSelected={checkOptionTwo}
+            isSelected={checkIfSelected.option2}
+            option={currentQuestion?.options[1]}
+          />
+          <Option
+            setSelectedOption={setSelectedOption}
+            checkIfSelected={checkOptionThree}
+            isSelected={checkIfSelected.option3}
+            option={currentQuestion?.options[2]}
+          />
+          <Option
+            setSelectedOption={setSelectedOption}
+            checkIfSelected={checkOptionFour}
+            isSelected={checkIfSelected.option4}
+            option={currentQuestion?.options[3]}
+          />
+          <Option
+            setSelectedOption={setSelectedOption}
+            checkIfSelected={checkOptionFive}
+            isSelected={checkIfSelected.option5}
+            option={currentQuestion?.options[4]}
+          />
         </View>
-        <View style={{height:200}}>
-          <TouchableOpacity onPress={handleNext} activeOpacity={.8} style={styles.btn} >
-          <Text style={{color:"white", fontWeight: "600"}} >Next</Text>
-        </TouchableOpacity>
-        {/* <TouchableOpacity onPress={handlePrev} activeOpacity={.8} style={styles.btn} >
+        <View style={{ height: 200 }}>
+          <TouchableOpacity
+            onPress={handleNext}
+            activeOpacity={0.8}
+            style={styles.btn}
+          >
+            <Text style={{ color: "white", fontWeight: "600" }}>
+              Berikutnya
+            </Text>
+          </TouchableOpacity>
+          {/* <TouchableOpacity onPress={handlePrev} activeOpacity={.8} style={styles.btn} >
           <Text style={{color:"white", fontWeight: "600"}} >Back</Text>
         </TouchableOpacity> */}
-          </View>
+        </View>
       </SafeAreaView>
     </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e4e4e4',
+    backgroundColor: "#FCFAFA",
     padding: 20,
   },
-  scrollView:{
-    flex:1,
+  scrollView: {
+    flex: 1,
   },
   countwrapper: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 10
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 10,
   },
   questionwrapper: {
     marginTop: 60,
     width: "100%",
-    height: 180,
+    height: 150,
     borderRadius: 20,
     backgroundColor: "#fff",
     padding: 16,
@@ -219,7 +262,7 @@ const styles = StyleSheet.create({
   },
   progressBar: {
     height: "100%",
-    backgroundColor: "#35374B",
+    backgroundColor: "#191A24",
     alignSelf: "flex-end",
   },
   progresscount: {
@@ -236,20 +279,21 @@ const styles = StyleSheet.create({
   percentage: {
     fontWeight: "600",
     fontSize: 18,
-    color: "#35374B",
+    color: "#191A24",
   },
   optionswrapper: {
-    paddingTop: 16, 
+    paddingTop: 16,
     paddingBottom: 16,
     width: "100%",
   },
   btn: {
     width: "100%",
     height: 50,
+    alignSelf: "center",
     borderRadius: 16,
-    backgroundColor: "#35374B",
+    backgroundColor: "#191A24",
     justifyContent: "center",
     alignItems: "center",
     marginTop: 20,
-  }
+  },
 });
