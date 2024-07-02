@@ -20,13 +20,14 @@ export default function Media() {
   return (
     <SafeAreaView>
       <View style={styles.container}> 
+      <View style = {styles.videoContainer}>
       <YoutubeIframe
         height={300}
-        width={400}
         play={playing}
         videoId={"ByquaD-su7M"}
         // onChangeState={onStateChange}
       />
+      </View>
       </View>
     </SafeAreaView>
   );
@@ -35,14 +36,13 @@ export default function Media() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding : 30,
+    width : '100%' ,
     backgroundColor: '#FFFFF3',
-    height : '100%',
-    alignItems : 'center',
-    justifyContent : 'center',
-    position : 'absolute',
-    paddingTop: '100%'
   },
   videoContainer : {
-    
+    backgroundColor : '#FFFFF3',
+    width : '100%' ,
+
   }
 });

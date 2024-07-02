@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "fatigue test",
+    "name": "fatigue",
     "slug": "fatiguetest",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,7 +19,7 @@
       "package": "nurazhad.fatiguetest",
       "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#ffffff"
       }
     },

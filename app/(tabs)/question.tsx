@@ -144,7 +144,6 @@ export default function App() {
 
   return (
     <>
-      <Stack.Screen options={{ title: '' }} />
     <View style={styles.container}>
       <SafeAreaView>
         {/* <View style={styles.countwrapper} >
@@ -221,7 +220,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFF3",
-    padding: 10,
+    padding: 30,
   },
   scrollView: {
     flex: 1,
