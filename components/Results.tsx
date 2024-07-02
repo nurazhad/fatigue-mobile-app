@@ -23,7 +23,7 @@ const Results = ({
         <Text style={{ marginVertical: 20, fontWeight: "500" }}>
           Tingkat Kelelahan Anda Adalah ... {score}
         </Text>
-        <Text style={{ fontWeight: "700", fontSize: 50, color: "#004643" }}>
+        <Text style={{ fontWeight: "700", fontSize: 50, color: "#BB0A21" }}>
           {fatigue}
         </Text>
         <TouchableOpacity
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#e4e4e4",
+    backgroundColor: "#FFFFF3",
     padding: 20,
   },
   wrapper: {
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#35374B",
+    backgroundColor: "#BB0A21",
     marginTop: 20,
   },
 });

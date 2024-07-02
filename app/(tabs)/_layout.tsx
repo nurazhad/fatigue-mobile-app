@@ -5,7 +5,7 @@ import { TabBarIcon } from "@/components/navigation/TabBarIcon";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import {
-  MaterialIcons,
+  MaterialIcons, Octicons
 } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
 export default function TabLayout() {
@@ -32,27 +32,36 @@ export default function TabLayout() {
         <Tabs.Screen
           name="index"
           options={{
-            title: "Beranda",
+            title: "",
             tabBarIcon: ({ color }) => (
-              <MaterialIcons name="home" size={20} color={color} />
+              <MaterialIcons name="home" size={30} color={color} />
             ),
           }}
         />
         <Tabs.Screen
           name="media"
           options={{
-            title: "Media",
+            title: "",
             tabBarIcon: ({ color }) => (
-              <MaterialIcons name="perm-media" size={20} color={color} />
+              <Octicons name="video" size={30} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="audio"
+          options={{
+            title: "",
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="multitrack-audio" size={30} color={color} />
             ),
           }}
         />
         <Tabs.Screen
           name="question"
           options={{
-            title: "Pertanyaan",
+            title: "",
             tabBarIcon: ({ color }) => (
-              <MaterialIcons name="quiz" size={20} color={color} />
+              <MaterialIcons name="quiz" size={30} color={color} />
             ),
           }}
         />

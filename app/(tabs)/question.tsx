@@ -144,9 +144,8 @@ export default function App() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Pertanyaan' }} />
+      <Stack.Screen options={{ title: '' }} />
     <View style={styles.container}>
-      <StatusBar style="auto" />
       <SafeAreaView>
         {/* <View style={styles.countwrapper} >
           <Text style={{fontWeight: "600"}} >{score} / {prevScore} / {prevAnswer}</Text>
@@ -221,8 +220,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FCFAFA",
-    padding: 20,
+    backgroundColor: "#FFFFF3",
+    padding: 10,
   },
   scrollView: {
     flex: 1,
@@ -237,7 +236,7 @@ const styles = StyleSheet.create({
     marginTop: 60,
     width: "100%",
     height: 150,
-    borderRadius: 20,
+    borderRadius: 16,
     backgroundColor: "#fff",
     padding: 16,
     shadowColor: "#000",
@@ -252,7 +251,7 @@ const styles = StyleSheet.create({
   progresswrapper: {
     width: 70,
     height: 70,
-    backgroundColor: "#858793",
+    backgroundColor: "#F87788",
     borderRadius: 50,
     alignItems: "center",
     overflow: "hidden",
@@ -262,7 +261,7 @@ const styles = StyleSheet.create({
   },
   progressBar: {
     height: "100%",
-    backgroundColor: "#191A24",
+    backgroundColor: "#BB0A21",
     alignSelf: "flex-end",
   },
   progresscount: {
@@ -279,7 +278,7 @@ const styles = StyleSheet.create({
   percentage: {
     fontWeight: "600",
     fontSize: 18,
-    color: "#191A24",
+    color: "#BB0A21",
   },
   optionswrapper: {
     paddingTop: 16,
@@ -291,9 +290,10 @@ const styles = StyleSheet.create({
     height: 50,
     alignSelf: "center",
     borderRadius: 16,
-    backgroundColor: "#191A24",
+    backgroundColor: "#BB0A21",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
+    position : 'absolute',
+    top : 0
   },
 });

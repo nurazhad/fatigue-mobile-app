@@ -24,7 +24,7 @@ const Option = ({
       activeOpacity={0.8}
       style={[
         styles.option,
-        { backgroundColor: isSelected ? "#858793" : "#FFF" },
+        { backgroundColor: isSelected ? "#BB0A2180" : "#FFF" },
       ]}
     >
       <Text style={{ fontWeight: "500" }}>{option}</Text>
