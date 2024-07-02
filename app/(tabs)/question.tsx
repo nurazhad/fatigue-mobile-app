@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import Option from "./../../components/Option";
 import { useEffect, useState } from "react";
-import { questionsData } from "./questions";
+import { questionsData } from "../questions";
 import Results from "./../../components/Results";
 
 export default function App() {
