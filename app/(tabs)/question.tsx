@@ -8,10 +8,10 @@ import {
   View,
   ScrollView,
 } from "react-native";
-import Option from "./../../components/Option";
+import Option from "../../components/Option";
 import { useEffect, useState } from "react";
 import { questionsData } from "../questions";
-import Results from "./../../components/Results";
+import Results from "../../components/Results";
 
 export default function App() {
   const [questions, setQuestions] = useState<any>([]);
@@ -221,6 +221,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFF3",
     padding: 30,
+    justifyContent: "center", 
   },
   scrollView: {
     flex: 1,

@@ -20,11 +20,14 @@ export default function HomeScreen() {
               style={{ width: 390, height: 316 }}
             />
           </View>
-            <TouchableOpacity onPress={() => navigation.navigate('question' as never)} activeOpacity={0.8} style={styles.btnStart}>
+          <View style={styles.bottomView}>
+          <TouchableOpacity onPress={() => navigation.navigate('question' as never)} activeOpacity={0.8} style={styles.btnStart}>
             <Text style={{ color: "white", fontWeight: "600" }}>
               Mulai Test
             </Text>
           </TouchableOpacity>
+          </View>
+            
         </SafeAreaView>
     </View>
   );
@@ -35,34 +38,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFF3",
     padding: 30,
+    justifyContent: "space-evenly", 
   },
   welcomeContainer: {
     backgroundColor: "#FFFFF3",
     width: "100%",
-    height: 120,
-    borderRadius: 16,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,
-    marginTop: 60,
+    marginBottom :100
   },
   heading: {
     fontSize: 40,
     color: "#BB0A21",
     fontWeight: 600,
-    marginLeft: 20,
-    marginTop: 20,
   },
   desc: {
     fontSize: 12,
     color: "#BB0A21",
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 10,
-    justifyContent: "flex-start",
   },
   imageContainer: {
     alignItems: "center",
-    marginBottom: 200,
   },
   btnStart: {
     width: "100%",
@@ -71,14 +64,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#BB0A21",
     justifyContent: "center",
     alignItems: "center",
-    position : 'absolute',
-    bottom : 0,
   },
   bottomView: {
     width: "100%",
     alignItems: "center",
-    position: "absolute", //Here is the trick
-    bottom: 0,
-    justifyContent: "flex-end",
+    marginTop :100
   },
 });

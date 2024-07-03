@@ -8,6 +8,7 @@ import {
   MaterialIcons, Octicons
 } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
+import {BlurView} from "expo-blur"
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -21,12 +22,23 @@ export default function TabLayout() {
           headerShown: false,
           tabBarStyle: {
             position: "absolute",
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
+            borderTopLeftRadius: 16,
+            borderTopRightRadius: 16,
             borderTopWidth: 0,
             paddingTop: 8,
             height : 50
           },
+          tabBarBackground : () => (
+            <BlurView 
+              intensity={95}
+              style={{
+                ...StyleSheet.absoluteFillObject,
+                overflow: "hidden",
+                borderTopLeftRadius: 16,
+                borderTopRightRadius: 16,
+              }}
+            />
+          )
         }}
       >
         <Tabs.Screen
