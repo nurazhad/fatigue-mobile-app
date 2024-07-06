@@ -1,7 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import { Link, Stack } from 'expo-router';
 import {
-  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -12,14 +9,11 @@ import Option from "../../../components/Option";
 import { useEffect, useState } from "react";
 import { questionsData } from "../../questions";
 import Results from "../../../components/Results";
-import { screenPadding } from '@/constants/tokens'
 
 export default function App() {
   const [questions, setQuestions] = useState<any>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [prevScore, setPrevScore] = useState(0);
-  const [prevAnswer, setPrevAnswer] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
   const [showResult, setShowResult] = useState(false);
   const [checkIfSelected, setCheckIfSelected] = useState({
@@ -44,28 +38,23 @@ export default function App() {
     setPercentageComplete(percentage);
   }, [currentQuestionIndex]);
 
-  const handlePrev = () => {
-    setCurrentQuestionIndex((prevQuestion) => prevQuestion - 1);
-    setScore((currentScore) => currentScore - prevAnswer);
-    setPrevAnswer;
-  };
+  // const handlePrev = () => {
+  //   setCurrentQuestionIndex((prevQuestion) => prevQuestion - 1);
+  //   setScore((currentScore) => currentScore - prevAnswer);
+  //   setPrevAnswer;
+  // };
 
   const handleNext = () => {
     if (selectedOption === "Sangat Setuju") {
       setScore((currentScore) => currentScore + 5);
-      setPrevAnswer(5);
     } else if (selectedOption === "Setuju") {
       setScore((currentScore) => currentScore + 4);
-      setPrevAnswer(4);
     } else if (selectedOption === "Ragu Ragu") {
       setScore((currentScore) => currentScore + 3);
-      setPrevAnswer(3);
     } else if (selectedOption === "Tidak Setuju") {
       setScore((currentScore) => currentScore + 2);
-      setPrevAnswer(2);
     } else if (selectedOption === "Sangat Tidak Setuju") {
       setScore((currentScore) => currentScore + 1);
-      setPrevAnswer(1);
     } else {
       setScore((currentScore) => currentScore + 0);
     }

@@ -1,17 +1,11 @@
 import { Tabs } from "expo-router";
 import React from "react";
-
-import { TabBarIcon } from "@/components/navigation/TabBarIcon";
-import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
 import {
   MaterialIcons, Octicons
 } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
 import {BlurView} from "expo-blur"
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <>
       <Tabs
