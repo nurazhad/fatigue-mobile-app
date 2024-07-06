@@ -45,8 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FFFFF3",
-    padding: 20,
+    padding: 24,
   },
   wrapper: {
     width: "100%",
@@ -56,6 +55,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
+    borderColor :"#BB0A21",
+    borderWidth : 1
   },
   btn: {
     width: 100,

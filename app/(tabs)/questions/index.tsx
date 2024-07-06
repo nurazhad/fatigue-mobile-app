@@ -8,10 +8,11 @@ import {
   View,
   ScrollView,
 } from "react-native";
-import Option from "../../components/Option";
+import Option from "../../../components/Option";
 import { useEffect, useState } from "react";
-import { questionsData } from "../questions";
-import Results from "../../components/Results";
+import { questionsData } from "../../questions";
+import Results from "../../../components/Results";
+import { screenPadding } from '@/constants/tokens'
 
 export default function App() {
   const [questions, setQuestions] = useState<any>([]);
@@ -143,9 +144,8 @@ export default function App() {
     return <Results restart={restart} score={score} fatigue={fatigue} />;
 
   return (
-    <>
-    <View style={styles.container}>
-      <SafeAreaView>
+      <ScrollView showsHorizontalScrollIndicator={false} contentInsetAdjustmentBehavior="automatic"
+      style={{ paddingHorizontal: 4, backgroundColor : "#FFF" }}>
         {/* <View style={styles.countwrapper} >
           <Text style={{fontWeight: "600"}} >{score} / {prevScore} / {prevAnswer}</Text>
         </View> */}
@@ -161,7 +161,7 @@ export default function App() {
           </View>
 
           <Text style={{ fontWeight: "500", textAlign: "center" }}>
-            {currentQuestion?.question}
+           "{currentQuestion?.question}"
           </Text>
         </View>
         <View style={styles.optionswrapper}>
@@ -210,19 +210,11 @@ export default function App() {
           <Text style={{color:"white", fontWeight: "600"}} >Back</Text>
         </TouchableOpacity> */}
         </View>
-      </SafeAreaView>
-    </View>
-    </>
+      </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFFFF3",
-    padding: 30,
-    justifyContent: "center", 
-  },
   scrollView: {
     flex: 1,
   },

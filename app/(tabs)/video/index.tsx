@@ -8,11 +8,8 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { SafeAreaView, } from 'react-native-safe-area-context';
 
-export default function Media() {
+export default function video() {
   const [playing, setPlaying] = useState(false);
-
-  
-
   const togglePlaying = useCallback(() => {
     setPlaying((prev) => !prev);
   }, []);
@@ -37,13 +34,12 @@ export default function Media() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding : 30,
     width : '100%' ,
-    backgroundColor: '#FFFFF3',
     justifyContent: "center", 
+    backgroundColor : '#FFF',
   },
   videoContainer : {
-    backgroundColor : '#FFFFF3',
+    backgroundColor : '#FFF',
     width : '100%' ,
 
   }

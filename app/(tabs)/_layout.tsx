@@ -15,22 +15,22 @@ export default function TabLayout() {
   return (
     <>
       <Tabs
+        initialRouteName="home"
         screenOptions={{
-          tabBarLabelStyle: {
-            fontWeight: "500",
-          },
+          tabBarActiveTintColor : "#BB0A21",
+          tabBarInactiveTintColor : "#BB0A2150",
           headerShown: false,
           tabBarStyle: {
             position: "absolute",
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
             borderTopWidth: 0,
-            paddingTop: 8,
+            paddingTop: 10,
             height : 50
           },
           tabBarBackground : () => (
             <BlurView 
-              intensity={95}
+              intensity={90}
               style={{
                 ...StyleSheet.absoluteFillObject,
                 overflow: "hidden",
@@ -42,7 +42,7 @@ export default function TabLayout() {
         }}
       >
         <Tabs.Screen
-          name="index"
+          name="home"
           options={{
             title: "",
             tabBarIcon: ({ color }) => (
@@ -51,7 +51,7 @@ export default function TabLayout() {
           }}
         />
         <Tabs.Screen
-          name="media"
+          name="video"
           options={{
             title: "",
             tabBarIcon: ({ color }) => (
@@ -69,7 +69,7 @@ export default function TabLayout() {
           }}
         />
         <Tabs.Screen
-          name="question"
+          name="questions"
           options={{
             title: "",
             tabBarIcon: ({ color }) => (
@@ -77,6 +77,7 @@ export default function TabLayout() {
             ),
           }}
         />
+        
       </Tabs>
     </>
   );

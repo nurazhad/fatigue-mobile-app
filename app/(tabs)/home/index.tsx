@@ -1,13 +1,15 @@
-import { Image, StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { Image, StyleSheet, View, TouchableOpacity, Text, useColorScheme, ScrollView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from '@react-navigation/native';
+import { screenPadding } from '@/constants/tokens'
 
 export default function HomeScreen() {
   const navigation = useNavigation()
   return (
-    <View style={styles.container}>
-        <SafeAreaView>
+        <ScrollView contentInsetAdjustmentBehavior="automatic"
+        showsHorizontalScrollIndicator={false}
+				style={{ paddingHorizontal: 4, backgroundColor : "#FFF" }}> 
           <View style={styles.welcomeContainer}>
             <Text style={styles.heading}>FATIGUE TEST</Text>
             <Text style={styles.desc}>
@@ -16,34 +18,31 @@ export default function HomeScreen() {
           </View>
           <View style={styles.imageContainer}>
             <Image
-              source={require("./../../assets/images/home.png")}
-              style={{ width: 390, height: 316 }}
+              source={require("./../../../assets/images/home.png")}
+              style={{ width: 300, height: 250 }}
             />
           </View>
           <View style={styles.bottomView}>
-          <TouchableOpacity onPress={() => navigation.navigate('question' as never)} activeOpacity={0.8} style={styles.btnStart}>
+          <TouchableOpacity onPress={() => navigation.navigate('questions' as never)} activeOpacity={0.8} style={styles.btnStart}>
             <Text style={{ color: "white", fontWeight: "600" }}>
               Mulai Test
             </Text>
           </TouchableOpacity>
           </View>
             
-        </SafeAreaView>
-    </View>
+        </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFF3",
-    padding: 30,
     justifyContent: "space-evenly", 
   },
   welcomeContainer: {
-    backgroundColor: "#FFFFF3",
     width: "100%",
-    marginBottom :100
+    marginBottom :100,
+    marginTop : 20
   },
   heading: {
     fontSize: 40,
@@ -68,6 +67,7 @@ const styles = StyleSheet.create({
   bottomView: {
     width: "100%",
     alignItems: "center",
-    marginTop :100
+    marginTop :100,
+    marginBottom : 10
   },
 });
