@@ -2,28 +2,35 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const Results = ({
   score,
-  fatigue,
+  fatigue0,
+  fatigue1,
   restart,
 }: {
   score: number;
-  fatigue: string;
+  fatigue0: string;
+  fatigue1: string;
   restart: () => void;
 }) => {
-  if (score >= 20) {
-    fatigue = "TINGGI";
-  } else if (score >= 10) {
-    fatigue = "SEDANG";
-  } else {
-    fatigue = "RENDAH";
+  if (score <= 21) {
+    fatigue0 = "TIDAK ADA";
+    fatigue1 = "KELELAHAN";
+  } else if (score <= 50) {
+    fatigue0 = "ADA";
+    fatigue1 = "KELELAHAN";
   }
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
         <Text style={{ marginVertical: 20, fontWeight: "500" }}>
-          Tingkat Kelelahan Anda Adalah ... {score}
+          Hasil test anda menunjukan 
+          {/* {score} */}
         </Text>
-        <Text style={{ fontWeight: "700", fontSize: 50, color: "#BB0A21" }}>
-          {fatigue}
+        <Text style={{ fontWeight: "800", fontSize: 25, color: "#BB0A21" }}>
+          {fatigue0}
+        </Text>
+        
+        <Text style={{ fontWeight: "800", fontSize: 25, color: "#BB0A21" }}>
+          {fatigue1}
         </Text>
         <TouchableOpacity
           onPress={restart}
@@ -48,7 +55,7 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     width: "100%",
-    height: 300,
+    height: 400,
     backgroundColor: "#fff",
     borderRadius: 20,
     alignItems: "center",

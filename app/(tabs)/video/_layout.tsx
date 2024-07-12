@@ -5,7 +5,7 @@ import { defaultStyles } from '@/styles'
 
 const VideoLayout = () => {
 	return (
-		<View style={defaultStyles.container}>
+		<View>
 			<Stack>
 				<Stack.Screen
 					name="index"

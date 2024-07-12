@@ -12,6 +12,7 @@ import Results from "../../../components/Results";
 
 export default function App() {
   const [questions, setQuestions] = useState<any>([]);
+  const [questionNum, setQuestionNum] = useState<any>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
@@ -33,7 +34,7 @@ export default function App() {
 
   useEffect(() => {
     // let percentage = (((currentQuestionIndex + 1) / questions?.length) * 100);
-    let percentage = currentQuestionIndex * 20;
+    let percentage = currentQuestionIndex * 10;
 
     setPercentageComplete(percentage);
   }, [currentQuestionIndex]);
@@ -43,20 +44,38 @@ export default function App() {
   //   setScore((currentScore) => currentScore - prevAnswer);
   //   setPrevAnswer;
   // };
-
+  const handleStay = () => {
+    alert("PILIH SALAH SATU")
+  }
   const handleNext = () => {
-    if (selectedOption === "Sangat Setuju") {
-      setScore((currentScore) => currentScore + 5);
-    } else if (selectedOption === "Setuju") {
-      setScore((currentScore) => currentScore + 4);
-    } else if (selectedOption === "Ragu Ragu") {
-      setScore((currentScore) => currentScore + 3);
-    } else if (selectedOption === "Tidak Setuju") {
-      setScore((currentScore) => currentScore + 2);
-    } else if (selectedOption === "Sangat Tidak Setuju") {
-      setScore((currentScore) => currentScore + 1);
-    } else {
-      setScore((currentScore) => currentScore + 0);
+    if(currentQuestion?.questionNum === "4" || currentQuestion?.questionNum === "10"){
+      if (selectedOption === "Tidak Pernah") {
+        setScore((currentScore) => currentScore + 5);
+      } else if (selectedOption === "Kadang-Kadang") {
+        setScore((currentScore) => currentScore + 4);
+      } else if (selectedOption === "Dirasakan Secara Teratur") {
+        setScore((currentScore) => currentScore + 3);
+      } else if (selectedOption === "Sering Dialami") {
+        setScore((currentScore) => currentScore + 2);
+      } else if (selectedOption === "Selalu Dialami") {
+        setScore((currentScore) => currentScore + 1);
+      } else {
+        setScore((currentScore) => currentScore + 0);
+      }
+    }else{
+      if (selectedOption === "Tidak Pernah") {
+        setScore((currentScore) => currentScore + 1);
+      } else if (selectedOption === "Kadang-Kadang") {
+        setScore((currentScore) => currentScore + 2);
+      } else if (selectedOption === "Dirasakan Secara Teratur") {
+        setScore((currentScore) => currentScore + 3);
+      } else if (selectedOption === "Sering Dialami") {
+        setScore((currentScore) => currentScore + 4);
+      } else if (selectedOption === "Selalu Dialami") {
+        setScore((currentScore) => currentScore + 5);
+      } else {
+        setScore((currentScore) => currentScore + 0);
+      }
     }
 
     if (currentQuestionIndex < questions?.length - 1) {
@@ -128,15 +147,14 @@ export default function App() {
     setCurrentQuestionIndex(0);
     setShowResult(false);
   };
-  let fatigue = "rendah";
   if (showResult)
-    return <Results restart={restart} score={score} fatigue={fatigue} />;
+    return <Results restart={restart} score={score} fatigue0="TIDAK ADA" fatigue1="KELELAHAN" />;
 
   return (
       <ScrollView showsHorizontalScrollIndicator={false} contentInsetAdjustmentBehavior="automatic"
       style={{ paddingHorizontal: 4, backgroundColor : "#FFF" }}>
         {/* <View style={styles.countwrapper} >
-          <Text style={{fontWeight: "600"}} >{score} / {prevScore} / {prevAnswer}</Text>
+          <Text style={{fontWeight: "600"}} >{currentQuestion?.questionNum}/{score}</Text>
         </View> */}
 
         <View style={styles.questionwrapper}>
