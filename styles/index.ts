@@ -6,7 +6,7 @@ export const defaultStyles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: "#FFF",
         padding: 24,
-        justifyContent: "space-around", 
+        justifyContent: "center", 
 	},
 	text: {
 		fontSize: fontSize.base,

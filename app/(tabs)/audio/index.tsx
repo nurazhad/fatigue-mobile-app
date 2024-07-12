@@ -16,7 +16,7 @@ export default function audio() {
   const containerRef = useRef(null)
   const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
     container: containerRef,
-    height: 50,
+    height: 100,
     width : "20em",
     waveColor: '#BB0A2150',
     progressColor: '#BB0A21',
@@ -29,10 +29,10 @@ export default function audio() {
   }, [wavesurfer])
 
   return (
-    <ScrollView
-      contentInsetAdjustmentBehavior="automatic"
-      showsHorizontalScrollIndicator={false}
-      style={{ paddingHorizontal: 4, backgroundColor: "#FFF" }}>
+    <View
+      // contentInsetAdjustmentBehavior="automatic"
+      // showsHorizontalScrollIndicator={false}
+      style={styles.container}>
       <View style={styles.audioContainer}>
       <div ref={containerRef} />
       <Text>{formatTime(currentTime)}</Text>
@@ -44,7 +44,7 @@ export default function audio() {
           </Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
@@ -52,11 +52,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 		backgroundColor: "#FFF",
-    justifyContent: "space-around", 
+    justifyContent: "center", 
+    alignItems : 'center',
+    paddingHorizontal: 4, 
   },
   audioContainer:{
     justifyContent : 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop : 50,
+    backgroundColor : '#FFF'
   },
   btnPlay: {
     marginTop : 20,
