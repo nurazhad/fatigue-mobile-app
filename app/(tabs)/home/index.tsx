@@ -24,8 +24,8 @@ export default function HomeScreen() {
       </View>
       <View style={styles.imageContainer}>
         <Image
-          source={require("./../../../assets/images/home.png")}
-          style={{ width: 300, height: 250 }}
+          source={require("./../../../assets/images/home2.png")}
+          style={{ width: 300, height: 400 }}
         />
       </View>
       <View style={styles.bottomView}>
@@ -34,7 +34,8 @@ export default function HomeScreen() {
           activeOpacity={0.8}
           style={styles.btnStart}
         >
-          <Text style={{ color: "white", fontWeight: "600" }}>Mulai Test</Text>
+          <Text style={{ color: "white", fontWeight: "500", 
+    fontFamily : 'Roboto-Light' }}>MULAI</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -48,17 +49,20 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     width: "100%",
-    marginBottom: 100,
+    marginBottom: 20,
     marginTop: 20,
   },
   heading: {
     fontSize: 40,
     color: "#BB0A21",
-    fontWeight: 600,
+    fontWeight: 500,
+    fontFamily : 'Roboto-Medium'
   },
   desc: {
-    fontSize: 12,
+    fontSize: 16,
     color: "#BB0A21",
+    fontWeight : 100,
+    fontFamily : 'Roboto-Light'
   },
   imageContainer: {
     alignItems: "center",
@@ -75,6 +79,6 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     marginTop: 100,
-    marginBottom: 10,
+    marginBottom: 30,
   },
 });

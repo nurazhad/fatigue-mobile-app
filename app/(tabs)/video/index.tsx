@@ -39,12 +39,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#BB0A21",
     padding : 24,
-    fontWeight : 500
+    fontWeight : 500,
+    fontFamily : 'Roboto-Medium'
   },
   desc : {
     fontSize: 16,
     color: "#BB0A21",
     padding : 24,
-    fontWeight : 300
+    fontWeight : 200,    
+    fontFamily : 'Roboto-Light'
   }
 });

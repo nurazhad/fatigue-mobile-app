@@ -21,15 +21,15 @@ const Results = ({
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-        <Text style={{ marginVertical: 20, fontWeight: "500" }}>
+        <Text style={{ fontFamily : 'Roboto-Light', marginVertical: 20, fontWeight: "500" }}>
           Hasil test anda menunjukan 
           {/* {score} */}
         </Text>
-        <Text style={{ fontWeight: "800", fontSize: 25, color: "#BB0A21" }}>
+        <Text style={{ fontWeight: "800", fontFamily : 'Roboto-Bold', fontSize: 25, color: "#BB0A21" }}>
           {fatigue0}
         </Text>
         
-        <Text style={{ fontWeight: "800", fontSize: 25, color: "#BB0A21" }}>
+        <Text style={{ fontWeight: "800", fontFamily : 'Roboto-Bold', fontSize: 25, color: "#BB0A21" }}>
           {fatigue1}
         </Text>
         <TouchableOpacity
@@ -37,7 +37,7 @@ const Results = ({
           activeOpacity={0.8}
           style={styles.btn}
         >
-          <Text style={{ color: "white", fontWeight: "600" }}>Ulangi</Text>
+          <Text style={{ fontFamily : 'Roboto-Light', color: "white", fontWeight: "600" }}>Ulangi</Text>
         </TouchableOpacity>
       </View>
     </View>

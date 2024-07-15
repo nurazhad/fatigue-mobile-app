@@ -27,7 +27,7 @@ const Option = ({
         { backgroundColor: isSelected ? "#BB0A2180" : "#FFF" },
       ]}
     >
-      <Text style={{ fontWeight: "500" }}>{option}</Text>
+      <Text style={{ fontWeight: "500",fontFamily : 'Roboto-Light' }}>{option}</Text>
     </TouchableOpacity>
   );
 };

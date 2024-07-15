@@ -167,7 +167,7 @@ export default function App() {
             </View>
           </View>
 
-          <Text style={{ fontWeight: "500", textAlign: "center" }}>
+          <Text style={{ fontWeight: "500",fontFamily : 'Roboto-Light', textAlign: "center" }}>
            "{currentQuestion?.question}"
           </Text>
         </View>
@@ -209,7 +209,7 @@ export default function App() {
             activeOpacity={0.8}
             style={styles.btn}
           >
-            <Text style={{ color: "white", fontWeight: "600" }}>
+            <Text style={{ color: "white", fontFamily : 'Roboto-Bold', fontWeight: "500" }}>
               Berikutnya
             </Text>
           </TouchableOpacity>

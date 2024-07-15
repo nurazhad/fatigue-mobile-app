@@ -1,15 +1,18 @@
 import { useEffect} from "react";
-import React from "react"   
+import React from "react" 
+import { BlurView } from "expo-blur";  
 import WavesurferPlayer from '@wavesurfer/react'
 import {
   ScrollView,
   View,
   Text,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from "react-native";
 const { useMemo, useState, useCallback, useRef } = React
 import { useWavesurfer } from '@wavesurfer/react'
+const image = {uri : './../../../assets/images/bg.jpg'}
 
 const audioUrls = './../../../assets/music/Audio.mp3'
 export default function audio() {
@@ -33,17 +36,20 @@ export default function audio() {
       // contentInsetAdjustmentBehavior="automatic"
       // showsHorizontalScrollIndicator={false}
       style={styles.container}>
-      <View style={styles.audioContainer}>
+        {/* <ImageBackground source={image} resizeMode="cover" style={styles.image}> */}
+          <BlurView intensity={50} style={styles.audioContainer}>
       <div ref={containerRef} />
-      <Text>{formatTime(currentTime)}</Text>
-        <TouchableOpacity
+      <Text style = {{fontFamily : 'Roboto-Light'}}>{formatTime(currentTime)}</Text>
+      </BlurView>
+      <TouchableOpacity
          onPress={onPlayPause} 
          style={styles.btnPlay}>
-          <Text style = {{color : '#FFF'}}>
-          {isPlaying ? 'Pause' : 'Play'}
+          <Text style = {{color : '#FFF',
+    fontFamily : 'Roboto-Light'}}>
+          {isPlaying ? 'Berhenti' : 'Mainkan'}
           </Text>
         </TouchableOpacity>
-      </View>
+      {/* </ImageBackground> */}
     </View>
   );
 }
@@ -51,25 +57,30 @@ export default function audio() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-		backgroundColor: "#FFF",
+		// backgroundColor: "#FFF",
     justifyContent: "center", 
     alignItems : 'center',
-    paddingHorizontal: 4, 
   },
   audioContainer:{
     justifyContent : 'center',
     alignItems: 'center',
-    marginTop : 50,
-    backgroundColor : '#FFF'
+    backgroundColor : '#FFF',
+    borderRadius : 16
   },
   btnPlay: {
     marginTop : 20,
-    width: 60,
+    width: 90,
     height: 30,
     borderRadius: 16,
     backgroundColor: "#BB0A21",
     justifyContent: "center",
     alignItems: "center",
+    alignSelf : 'center',
     color : "FFF"
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+    width : '100%'
   },
 })

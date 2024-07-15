@@ -5,7 +5,8 @@ export const defaultStyles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "#FFF",
-        padding: 24,
+        // padding: 0,
+		padding : 24, 
         justifyContent: "center", 
 	},
 	text: {

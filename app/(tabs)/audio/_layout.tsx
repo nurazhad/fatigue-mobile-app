@@ -4,7 +4,9 @@ import { defaultStyles } from '@/styles'
 
 const AudioLayout = () => {
 	return (
-		<View style={defaultStyles.container}>
+		<View style={{flex: 1,
+			backgroundColor: "#FFF",
+			justifyContent: "center", }}>
 			<Stack>
 				<Stack.Screen
 					name="index"
