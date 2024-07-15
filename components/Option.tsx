@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 20,
     backgroundColor: "#fff",
-    shadowOpacity: 0.4,
+    shadowOpacity: 0.9,
     shadowRadius: 5,
   },
 });

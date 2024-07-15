@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 0,
     },
-    shadowOpacity: 0.4,
+    shadowOpacity: 0.9,
     shadowRadius: 5,
     alignItems: "center",
   },
