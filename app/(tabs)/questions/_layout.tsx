@@ -7,12 +7,13 @@ const QuestionLayout = () => {
 	return (
 		<View style={defaultStyles.container}>
 			<Stack>
-				<Stack.Screen 
-				options={{
-						...StackScreenWithSearchBar,
-						headerTitle: '',
-					}}
+				<Stack.Screen
 					name="index"
+                    options={{
+						headerShown : false,
+						headerTitle: '',
+						
+					}}
 				/>
 			</Stack>
 		</View>

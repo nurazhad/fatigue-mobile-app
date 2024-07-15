@@ -57,14 +57,14 @@ export default function audio() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-		// backgroundColor: "#FFF",
+		backgroundColor: "#FFF",
     justifyContent: "center", 
     alignItems : 'center',
   },
   audioContainer:{
     justifyContent : 'center',
     alignItems: 'center',
-    backgroundColor : '#FFF',
+    // backgroundColor : '#FFF',
     borderRadius : 16
   },
   btnPlay: {

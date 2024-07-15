@@ -19,7 +19,7 @@
       "package": "com.dyanurahman.fatiguetest",
       "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/logo.png",
+        "foregroundImage": "./assets/images/fatiguelogo.png",
         "backgroundColor": "#ffffff"
       }
     },

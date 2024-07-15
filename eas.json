@@ -3,6 +3,14 @@
     "preview": {
       "channel": "preview"
     },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "image": "latest",
+        "buildType" : "apk"
+      }
+    },
     "production": {
       "android": {
         "image": "latest",

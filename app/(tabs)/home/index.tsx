@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "space-evenly",
+		backgroundColor: "#FFF",
   },
   welcomeContainer: {
     width: "100%",

@@ -5,13 +5,14 @@ import { defaultStyles } from '@/styles'
 
 const VideoLayout = () => {
 	return (
-		<View>
+		<View style={defaultStyles.container}>
 			<Stack>
 				<Stack.Screen
 					name="index"
-					options={{
-						...StackScreenWithSearchBar,
+                    options={{
+						headerShown : false,
 						headerTitle: '',
+						
 					}}
 				/>
 			</Stack>

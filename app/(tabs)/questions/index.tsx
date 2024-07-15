@@ -224,6 +224,7 @@ export default function App() {
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
+		backgroundColor: "#FFF",
   },
   countwrapper: {
     width: "100%",
