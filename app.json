@@ -16,7 +16,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "nurazhad.fatiguetest",
+      "package": "com.dyanurahman.fatiguetest",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo.png",
