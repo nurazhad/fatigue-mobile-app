@@ -16,7 +16,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.dyanurahman.fatiguetestsatu",
+      "package": "com.fatiguesatu",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/fatiguelogo.png",
