@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "fatigue",
+    "name": "Fatigue Test",
     "slug": "fatiguetest",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/splashwhite.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,7 +16,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.dyanurahman.fatiguetest",
+      "package": "com.dyanurahman.fatiguetestsatu",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/fatiguelogo.png",
