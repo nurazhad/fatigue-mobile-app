@@ -1,7 +1,13 @@
 [
   {
-    "url": "./../music/audio.mp3",
+    "url": "https://audio.jukehost.co.uk/kiOnRWnZAeDgqvOKSB2EBpbWvq59hgor",
     "title": "Musik Relaksasi",
-    "coverImage" : ""
+    "artist": "Unknown",
+    "rating": 5
+  },{
+    "url": "https://audio.jukehost.co.uk/tkkgFvJqAw6xLFiYNIGwdBsVoClTUJXO",
+    "title": "Suara Hujan",
+    "artist": "Unknown",
+    "rating": 5
   }
 ]

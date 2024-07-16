@@ -1,6 +1,7 @@
 import { Stack } from 'expo-router'
 import { View } from 'react-native'
 import { defaultStyles } from '@/styles'
+import { FloatingPlayer } from '@/components/FloatingPlayer'
 
 const AudioLayout = () => {
 	return (
@@ -15,6 +16,14 @@ const AudioLayout = () => {
 					}}
 				/>
 			</Stack>
+			<FloatingPlayer
+				style={{
+					position: 'absolute',
+					left: 16,
+					right: 16,
+					bottom: 8,
+				}}
+			/>
 		</View>
 	)
 }

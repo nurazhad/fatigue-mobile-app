@@ -38,12 +38,13 @@ const styles = StyleSheet.create({
   option: {
     width: "100%",
     height: 45,
-    borderRadius: 16,
+    borderRadius: 10,
     paddingHorizontal: 12,
     justifyContent: "center",
     marginBottom: 20,
     backgroundColor: "#fff",
-    shadowOpacity: 0.9,
+    borderColor: "#000",
     shadowRadius: 5,
+    borderWidth : 0.5,
   },
 });

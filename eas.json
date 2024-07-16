@@ -9,7 +9,8 @@
       "android": {
         "image": "latest",
         "buildType" : "apk"
-      }
+      },
+      "channel": "development"
     },
     "production": {
       "android": {

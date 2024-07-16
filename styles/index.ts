@@ -26,7 +26,7 @@ export const utilsStyles = StyleSheet.create({
 		borderRadius: 16,
 	},
 	itemSeparator: {
-		borderColor: colors.textMuted,
+		borderColor: "#000",
 		borderWidth: StyleSheet.hairlineWidth,
 		opacity: 0.3,
 	},

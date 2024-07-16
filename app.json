@@ -4,7 +4,7 @@
     "slug": "fatiguetest",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/fatiguelogopng",
+    "icon": "./assets/images/fatiguelogo.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -45,6 +45,7 @@
     "runtimeVersion": {
       "policy": "appVersion"
     },
+    
     "updates": {
       "url": "https://u.expo.dev/5d8a07f0-af8e-4b8a-ae42-cf8705ef6b66"
     }

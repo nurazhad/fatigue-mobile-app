@@ -9,10 +9,10 @@ import Option from "../../../components/Option";
 import { useEffect, useState } from "react";
 import { questionsData } from "../../questions";
 import Results from "../../../components/Results";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   const [questions, setQuestions] = useState<any>([]);
-  const [questionNum, setQuestionNum] = useState<any>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
@@ -44,9 +44,9 @@ export default function App() {
   //   setScore((currentScore) => currentScore - prevAnswer);
   //   setPrevAnswer;
   // };
-  const handleStay = () => {
-    alert("PILIH SALAH SATU")
-  }
+  // const handleStay = () => {
+  //   alert("PILIH SALAH SATU")
+  // }
   const handleNext = () => {
     if(currentQuestion?.questionNum === "4" || currentQuestion?.questionNum === "10"){
       if (selectedOption === "Tidak Pernah") {
@@ -156,7 +156,7 @@ export default function App() {
         {/* <View style={styles.countwrapper} >
           <Text style={{fontWeight: "600"}} >{currentQuestion?.questionNum}/{score}</Text>
         </View> */}
-
+        <SafeAreaView>
         <View style={styles.questionwrapper}>
           <View style={styles.progresswrapper}>
             <View
@@ -167,7 +167,7 @@ export default function App() {
             </View>
           </View>
 
-          <Text style={{ fontWeight: "500",fontFamily : 'Roboto-Light', textAlign: "center" }}>
+          <Text style={{ fontFamily : 'Roboto-Light', textAlign: "center" }}>
            "{currentQuestion?.question}"
           </Text>
         </View>
@@ -209,7 +209,7 @@ export default function App() {
             activeOpacity={0.8}
             style={styles.btn}
           >
-            <Text style={{ color: "white", fontFamily : 'Roboto-Bold', fontWeight: "500" }}>
+            <Text style={{ color: "white", fontFamily : 'Roboto-Bold', }}>
               Berikutnya
             </Text>
           </TouchableOpacity>
@@ -217,6 +217,7 @@ export default function App() {
           <Text style={{color:"white", fontWeight: "600"}} >Back</Text>
         </TouchableOpacity> */}
         </View>
+        </SafeAreaView>
       </ScrollView>
   );
 }
@@ -233,7 +234,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   questionwrapper: {
-    marginTop: 60,
+    marginTop: 80,
     width: "100%",
     height: 150,
     borderRadius: 16,
@@ -245,6 +246,8 @@ const styles = StyleSheet.create({
       height: 0,
     },
     shadowOpacity: 0.9,
+    borderColor : "#000",
+    borderWidth : 0.5,
     shadowRadius: 5,
     alignItems: "center",
   },
@@ -276,7 +279,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   percentage: {
-    fontWeight: "600",
+    // fontWeight: "600",
     fontSize: 18,
     color: "#BB0A21",
   },
