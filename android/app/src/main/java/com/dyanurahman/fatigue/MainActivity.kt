@@ -1,4 +1,4 @@
-package com.fatiguesatu
+package com.dyanurahman.fatigue
 
 import android.os.Build
 import android.os.Bundle

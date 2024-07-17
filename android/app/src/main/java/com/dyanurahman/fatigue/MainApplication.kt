@@ -1,4 +1,4 @@
-package com.fatiguesatu
+package com.dyanurahman.fatigue
 
 import android.app.Application
 import android.content.res.Configuration
