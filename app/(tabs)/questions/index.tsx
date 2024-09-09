@@ -33,20 +33,10 @@ export default function App() {
   let currentQuestion = questions[currentQuestionIndex];
 
   useEffect(() => {
-    // let percentage = (((currentQuestionIndex + 1) / questions?.length) * 100);
     let percentage = currentQuestionIndex * 10;
 
     setPercentageComplete(percentage);
   }, [currentQuestionIndex]);
-
-  // const handlePrev = () => {
-  //   setCurrentQuestionIndex((prevQuestion) => prevQuestion - 1);
-  //   setScore((currentScore) => currentScore - prevAnswer);
-  //   setPrevAnswer;
-  // };
-  // const handleStay = () => {
-  //   alert("PILIH SALAH SATU")
-  // }
   const handleNext = () => {
     if(currentQuestion?.questionNum === "4" || currentQuestion?.questionNum === "10"){
       if (selectedOption === "Tidak Pernah") {

@@ -1,24 +1,28 @@
 import { StyleSheet, View, Text } from 'react-native';
 import YoutubeIframe from "react-native-youtube-iframe";
 import { SafeAreaView, } from 'react-native-safe-area-context';
+import Video from "react-native-video";
 
 export default function video() {
     return (
     <View style={styles.container}> 
     <SafeAreaView>
       <View style = {styles.videoContainer}>
-      <YoutubeIframe
+      {/* <YoutubeIframe
         height= {250}
         videoId={"ByquaD-su7M"}
-      />
+      /> */}
+      <Video source={{uri: 'https://drive.google.com/uc?export=download&id={1DkSKPXjbQd9mZMSrzdyImSqhlIDTJJ3z}'}}></Video>
+
+      <Video source={{uri: 'https://drive.google.com/uc?export=download&id={1FS99A3_gZFEdUT2n9hzjzcqlbHaMoRb1}'}}></Video>
+
+      
       </View>
       <View>
-        <Text style = {styles.heading}>
+        {/* <Text style = {styles.heading}>
           Deskripsi
-        </Text>
-        <Text style = {styles.desc}>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </Text>
+        </Text> */}
+
       </View>
       </SafeAreaView>
       </View>

@@ -27,7 +27,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="home"
           options={{
-            title: "",
+            title: "Home",
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="home" size={35} color={color} />
             ),
@@ -36,7 +36,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="video"
           options={{
-            title: "",
+            title: "Video",
             tabBarIcon: ({ color }) => (
               <Octicons name="video" size={35} color={color} />
             ),
@@ -45,7 +45,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="audio"
           options={{
-            title: "",
+            title: "Audio",
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="multitrack-audio" size={35} color={color} />
             ),
@@ -54,7 +54,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="questions"
           options={{
-            title: "",
+            title: "Questions",
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="quiz" size={35} color={color} />
             ),
