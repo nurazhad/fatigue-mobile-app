@@ -8,13 +8,20 @@ export default function video() {
     <View style={styles.container}> 
     <SafeAreaView>
       <View style = {styles.videoContainer}>
-      {/* <YoutubeIframe
+      <View>
+      <YoutubeIframe
         height= {250}
-        videoId={"ByquaD-su7M"}
-      /> */}
-      <Video source={{uri: 'https://drive.google.com/uc?export=download&id={1DkSKPXjbQd9mZMSrzdyImSqhlIDTJJ3z}'}}></Video>
+        videoId={"OQ_4maJ8QvQ"}
+      />
+      </View>
+      <View>
+      <YoutubeIframe
+        height= {250}
+        videoId={"gDpg5aQE8dw"}
+      />
+      </View>
+      
 
-      <Video source={{uri: 'https://drive.google.com/uc?export=download&id={1FS99A3_gZFEdUT2n9hzjzcqlbHaMoRb1}'}}></Video>
 
       
       </View>

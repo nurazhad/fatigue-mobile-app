@@ -14,7 +14,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <SafeAreaView>
         <View style={styles.welcomeContainer}>
-          <Text style={styles.heading}>FATIGUE TEST</Text>
+          <Text style={styles.heading}>FATIGUE SEFT-BENSON</Text>
           <Text style={styles.desc}>
             Ketahui tingkat kelelahan anda dengan menjawab pertanyaan berikut
           </Text>

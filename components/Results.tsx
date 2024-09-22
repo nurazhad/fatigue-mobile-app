@@ -4,23 +4,29 @@ const Results = ({
   score,
   fatigue0,
   fatigue1,
+  fatigue2,
   restart,
 }: {
   score: number;
   fatigue0: string;
-  fatigue1: string;
+  fatigue1;
+  fatigue2: string;
   restart: () => void;
 }) => {
   if (score <= 21) {
-    fatigue0 = "Anda tidak mengalami kelelahan";
+    fatigue0 = "Anda tidak mengalami kelelahan. Skor anda ";
+    fatigue1 ;
+    fatigue2 =" dari skor maksimal 50.";
   } else if (score <= 50) {
-    fatigue0 = "Anda Mengalami Kelelahan dengan skor" + {score}+" dari skor maksimal 50. Lakukan terapi mandiri untuk mengurangi fatigue yang anda rasakan. #Pilih video jika anda membutuhkan contoh terapi seft dan benson. #Pilih audio jika anda hanya ingin mendapat panduan suara terapi SEFT-Benson";
+    fatigue0 = "Anda Mengalami Kelelahan dengan skor " ;
+    fatigue1 = score;
+    fatigue2 = " dari skor maksimal 50. Lakukan terapi mandiri untuk mengurangi fatigue yang anda rasakan. #Pilih video jika anda membutuhkan contoh terapi seft dan benson. #Pilih audio jika anda hanya ingin mendapat panduan suara terapi SEFT-Benson";
   }
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
         <Text style={{ fontFamily : 'Roboto-Light', marginVertical: 20, fontWeight: "500" }}>
-          {fatigue0}
+          {fatigue0} {fatigue1} {fatigue2}
           {/* {score} */}
         </Text>
         <TouchableOpacity

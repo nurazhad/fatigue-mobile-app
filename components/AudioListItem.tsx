@@ -1,4 +1,4 @@
-import {  unknownTrackImageUri } from '@/constants/image'
+// import {  unknownTrackImageUri } from '@/constants/image'
 import React from 'react'
 import { SafeAreaView, TouchableHighlight, View, StyleSheet, Text } from 'react-native'
 import FastImage from 'react-native-fast-image'
